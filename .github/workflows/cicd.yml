@@ -60,8 +60,9 @@ restart-docker-compose:
     steps:
       - name: Run remote script with SSH
         uses: appleboy/ssh-action@v1.0.3
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        script: restart_docker_compose
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: restart_docker_compose
 
